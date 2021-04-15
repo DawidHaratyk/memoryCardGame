@@ -230,9 +230,9 @@ var restartGame = function restartGame() {
   setTimeout(function () {
     randomPositionOfIcons(backCards);
   }, 1000);
-};
+}; // restartBtn.addEventListener('click', restartGame);
+// Game logic
 
-restartBtn.addEventListener('click', restartGame); // Game logic
 
 var checkTechnology = function checkTechnology(cardsArray) {
   var firstCardDataTech = cardsArray[0].previousElementSibling.querySelector('i').dataset.tech;
@@ -274,6 +274,7 @@ var currentTime;
 var backCardsCounter = 0;
 
 var startGame = function startGame() {
+  restartBtn.addEventListener('click', restartGame);
   gameStartBtn.removeEventListener('click', startGame);
   gameStartBtn.innerHTML = 'in game'; // Time counter
 
@@ -325,7 +326,7 @@ var startGame = function startGame() {
 
   cards.forEach(function (card) {
     card.addEventListener('click', checkMoves);
-  }); // Drawing a random icon for each card
+  }); // Selecting a random icon for each card
 
   var backCards = document.querySelectorAll('.back-card');
   randomPositionOfIcons(backCards);
@@ -360,7 +361,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53537" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52819" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
