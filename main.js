@@ -150,7 +150,7 @@ const restartGame = () => {
     setTimeout(function() { randomPositionOfIcons(backCards) }, 1000);
 }
 
-restartBtn.addEventListener('click', restartGame);
+// restartBtn.addEventListener('click', restartGame);
 
 
 // Game logic
@@ -199,6 +199,8 @@ let currentTime;
 let backCardsCounter = 0;
 
 const startGame = () => {
+    restartBtn.addEventListener('click', restartGame);
+    
     gameStartBtn.removeEventListener('click', startGame);
     gameStartBtn.innerHTML = 'in game';
 
@@ -264,7 +266,7 @@ const startGame = () => {
         card.addEventListener('click', checkMoves);
     })
 
-    // Drawing a random icon for each card
+    // Selecting a random icon for each card
     const backCards = document.querySelectorAll('.back-card');
 
     randomPositionOfIcons(backCards);
