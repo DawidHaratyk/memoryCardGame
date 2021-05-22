@@ -122,7 +122,6 @@ var technologyIcons = ['<i class="fab fa-react" data-tech="react" data-id="first
 
 var minutesElement = document.querySelector('.minutes');
 var secondsElement = document.querySelector('.seconds');
-var timeElement = document.querySelector('.time');
 var minutes = 0;
 var seconds = 0;
 
@@ -130,7 +129,7 @@ var timeCounter = function timeCounter() {
   seconds++;
 
   if (seconds === 60) {
-    seconds = 00;
+    seconds = 0;
     minutes++;
   }
 
@@ -159,7 +158,6 @@ var addMove = function addMove() {
 
 
 var stars = document.querySelectorAll('.star');
-var emptyStars = document.querySelectorAll('.empty-star');
 var starIndex = 2; // From nodeList to Array
 
 var starArray = Array.from(stars);
@@ -223,7 +221,7 @@ var restartGame = function restartGame() {
   });
 
   if (technologyIcons.length === 0) {
-    technologyIcons = ['<i class="fab fa-react" data-tech="react" data-id="first"></i>', '<i class="fab fa-react" data-tech="react" data-id="second"></i>', '<i class="fab fa-vuejs" data-tech="vue" data-id="first"></i>', '<i class="fab fa-vuejs" data-tech="vue" data-id="second"></i>', '<i class="fab fa-html5" data-tech="html" data-id="first"></i>', '<i class="fab fa-html5" data-tech="html" data-id="second"></i>', '<i class="fab fa-css3-alt" data-tech="css" data-id="first"></i>', '<i class="fab fa-css3-alt" data-tech="css" data-id="second"></i>', '<i class="fab fa-js-square" data-tech="js" data-id="first"></i>', '<i class="fab fa-js-square" data-tech="js" data-id="second"></i>', '<i class="fab fa-angular" data-tech="angular" data-id="first"></i>', '<i class="fab fa-angular" data-tech="angular" data-id="second"></i>', '<i class="fab fa-python" data-tech="python" data-id="first"></i>', '<i class="fab fa-python" data-tech="python" data-id="second"></i>', '<i class="fab fa-php" data-tech="php" data-id="first"></i>', '<i class="fab fa-php" data-tech="php" data-id="second"></i>']; // jak przywrócić stan tablicy krótszym zapisem?
+    return technologyIcons;
   }
 
   var backCards = document.querySelectorAll('.back-card');
@@ -361,7 +359,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52819" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58819" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

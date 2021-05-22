@@ -20,7 +20,6 @@ let technologyIcons = [
 // Time counter
 const minutesElement = document.querySelector('.minutes');
 const secondsElement = document.querySelector('.seconds');
-const timeElement = document.querySelector('.time');
 let minutes = 0;
 let seconds = 0;
 
@@ -28,7 +27,7 @@ const timeCounter = () => {
     seconds++;
 
     if (seconds === 60) {
-        seconds = 00;
+        seconds = 0;
         minutes++;
     }
 
@@ -59,7 +58,6 @@ const addMove = () => {
 
 // Star Counter
 const stars = document.querySelectorAll('.star');
-const emptyStars = document.querySelectorAll('.empty-star');
 let starIndex = 2;
 // From nodeList to Array
 let starArray = Array.from(stars);
@@ -125,25 +123,7 @@ const restartGame = () => {
     })
 
     if (technologyIcons.length === 0) {
-        technologyIcons = [
-            '<i class="fab fa-react" data-tech="react" data-id="first"></i>',
-            '<i class="fab fa-react" data-tech="react" data-id="second"></i>',
-            '<i class="fab fa-vuejs" data-tech="vue" data-id="first"></i>',
-            '<i class="fab fa-vuejs" data-tech="vue" data-id="second"></i>',
-            '<i class="fab fa-html5" data-tech="html" data-id="first"></i>',
-            '<i class="fab fa-html5" data-tech="html" data-id="second"></i>',
-            '<i class="fab fa-css3-alt" data-tech="css" data-id="first"></i>',
-            '<i class="fab fa-css3-alt" data-tech="css" data-id="second"></i>',
-            '<i class="fab fa-js-square" data-tech="js" data-id="first"></i>',
-            '<i class="fab fa-js-square" data-tech="js" data-id="second"></i>',
-            '<i class="fab fa-angular" data-tech="angular" data-id="first"></i>',
-            '<i class="fab fa-angular" data-tech="angular" data-id="second"></i>',
-            '<i class="fab fa-python" data-tech="python" data-id="first"></i>',
-            '<i class="fab fa-python" data-tech="python" data-id="second"></i>',
-            '<i class="fab fa-php" data-tech="php" data-id="first"></i>',
-            '<i class="fab fa-php" data-tech="php" data-id="second"></i>',
-        ];
-        // jak przywrócić stan tablicy krótszym zapisem?
+        return technologyIcons;
     }
 
     const backCards = document.querySelectorAll('.back-card');
